@@ -1,0 +1,169 @@
+{
+    "actions": [],
+    "allow_import": 1,
+    "allow_rename": 1,
+    "autoname": "naming_series:",
+    "creation": "2025-03-30 09:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+      "purchase_order",
+      "naming_series",
+      "section_break_1",
+      "stage",
+      "status",
+      "section_break_2",
+      "status_date",
+      "expected_date",
+      "actual_date",
+      "column_break_1",
+      "notes",
+      "attach_file",
+      "updated_by"
+    ],
+    "fields": [
+      {
+        "fieldname": "purchase_order",
+        "fieldtype": "Link",
+        "in_list_view": 1,
+        "label": "Purchase Order",
+        "options": "Foreign Purchase Order",
+        "mandatory": 1
+      },
+      {
+        "fieldname": "section_break_1",
+        "fieldtype": "Section Break"
+      },
+      {
+        "fieldname": "stage",
+        "fieldtype": "Link",
+        "in_list_view": 1,
+        "label": "Stage",
+        "options": "Foreign Purchase Stage",
+        "mandatory": 1
+      },
+      {
+        "depends_on": "eval: doc.stage ? {'filters': {'stage': doc.stage}} : {}",
+        "fieldname": "status",
+        "fieldtype": "Link",
+        "in_list_view": 1,
+        "label": "Status",
+        "options": "Foreign Purchase Status Item",
+        "mandatory": 1
+      },
+      {
+        "fieldname": "section_break_2",
+        "fieldtype": "Section Break"
+      },
+      {
+        "default": "Today",
+        "fieldname": "status_date",
+        "fieldtype": "Date",
+        "in_list_view": 1,
+        "label": "Updated Date",
+        "mandatory": 1
+      },
+      {
+        "fieldname": "expected_date",
+        "fieldtype": "Date",
+        "label": "Expected Date"
+      },
+      {
+        "fieldname": "actual_date",
+        "fieldtype": "Date",
+        "label": "Actual Date"
+      },
+      {
+        "fieldname": "column_break_1",
+        "fieldtype": "Column Break"
+      },
+      {
+        "fieldname": "notes",
+        "fieldtype": "Text",
+        "label": "Notes"
+      },
+      {
+        "fieldname": "attach_file",
+        "fieldtype": "Attach",
+        "label": "Attachments"
+      },
+      {
+        "fetch_from": "user",
+        "fetch_if_empty": 1,
+        "fieldname": "updated_by",
+        "fieldtype": "Link",
+        "in_list_view": 1,
+        "label": "Updated By",
+        "options": "User",
+        "read_only": 1
+      },
+      {
+        "fieldname": "naming_series",
+        "fieldtype": "Select",
+        "label": "Series"
+      }
+    ],
+    "grid_page_length": 50,
+    "index_web_pages_for_search": 1,
+    "is_submittable": 0,
+    "links": [],
+    "modified": "2025-03-30 09:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "hdfp",
+    "name": "Foreign Purchase Status",
+    "owner": "Administrator",
+    "permissions": [
+      {
+        "create": 1,
+        "delete": 1,
+        "email": 1,
+        "export": 1,
+        "print": 1,
+        "read": 1,
+        "report": 1,
+        "role": "System Manager",
+        "share": 1,
+        "write": 1
+      },
+      {
+        "create": 1,
+        "delete": 1,
+        "email": 1,
+        "export": 1,
+        "print": 1,
+        "read": 1,
+        "report": 1,
+        "role": "Purchase Manager",
+        "share": 1,
+        "write": 1
+      },
+      {
+        "create": 1,
+        "delete": 1,
+        "email": 1,
+        "export": 1,
+        "print": 1,
+        "read": 1,
+        "report": 1,
+        "role": "Purchase User",
+        "share": 1,
+        "write": 1
+      },
+      {
+        "create": 1,
+        "delete": 1,
+        "email": 1,
+        "export": 1,
+        "print": 1,
+        "read": 1,
+        "report": 1,
+        "role": "Purchase Status Tracker",
+        "share": 1,
+        "write": 1
+      }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "track_changes": 1
+  }
